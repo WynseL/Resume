@@ -31,7 +31,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
 
-  List<bool> _iconHoverState = [false, false, false];
+  List<bool> _iconHoverState = [false, false, false, false];
 
   _defaultText(String text, double textSize) {
     return Text(
@@ -67,27 +67,27 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  _labelAndValue(String label, String value) {
+  _labelAndValue(List value) {
     return RichText(
       text: TextSpan(
-        style: Theme.of(context).textTheme.body2,
+        style: Theme.of(context).textTheme.body1,
         children: [
           TextSpan(
-            text: "$label: ", 
+            text: "${value[0]}: ", 
             style: TextStyle(
               color: Colors.red,
               fontStyle: FontStyle.normal    
             )
           ),
           TextSpan(
-            text: value
+            text: value[1]
           )
         ]
       ),  
     );
   }
 
-  _gridItems(IconData icon, String title, String text) {
+  _gridItems(IconData icon, List value) {
     return GridTile(
       child: Container(
         color: Colors.blue,
@@ -97,16 +97,16 @@ class HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-              Icon(icon, size: 50),
+              Icon(icon, size: 50,),
               SizedBox(height: 5,),
               Text(
-                title, 
+                value[0], 
                 textAlign: TextAlign.center, 
                 style: TextStyle(fontSize: 30),
               ),
               SizedBox(height: 10,),
               Text(
-                text, 
+                value[1], 
                 textAlign: TextAlign.center,
               )
           ],
@@ -146,15 +146,16 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(width: 0.0, height: 24.0),
-                  _defaultText("CHADWYN GONZALES", 50.0),
-                  _defaultText("MOBILE ENGINEER", 30.0),
+                  _defaultText(Header_Title, 50.0),
+                  _defaultText(Header_SubTitle, 30.0),
                   SizedBox(width: 0.0, height: 10.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _decoratedIcon(0, MyFlutterApp.facebook_1, Colors.white, Colors.blue, "google.com"), // Facebook
-                      _decoratedIcon(1, MyFlutterApp.twitter, Colors.white, Colors.lightBlue, "google.com"), //Twitter
-                      _decoratedIcon(2, MyFlutterApp.twitter, Colors.red, Colors.white, "google.com"),
+                      _decoratedIcon(0, AppIcons.facebook_1, Colors.white, Colors.blue, Header_Link_0), // Facebook
+                      _decoratedIcon(1, AppIcons.twitter, Colors.white, Colors.lightBlue, Header_Link_0), //Twitter
+                      _decoratedIcon(2, AppIcons.github, Colors.white, Colors.black, Header_Link_0), // Github
+                      _decoratedIcon(3, AppIcons.bitbucket, Colors.white, Colors.blue, Header_Link_0), // Bitbucket
                     ],
                   ),
                 ],
@@ -177,15 +178,14 @@ class HomePageState extends State<HomePage> {
                         textDirection: TextDirection.ltr,
                         children: <Widget>[
                           Text(
-                            "titleee!", 
+                            Contact_Info_Title, 
                             style: TextStyle(
                               fontSize: 30.0,
                             ),
                           ),
-                          _labelAndValue("mmmadadasdas", "mmmasdadada sdsadasd"),
-                          _labelAndValue("wowasdsadasd", "wowasdasddadaas"),
-                          _labelAndValue("heyasddsadaa", "heyasddadss"),
-                          _labelAndValue("xDasddadadad", "Dxaddadasdasdadasdasd"),
+                          _labelAndValue(Contact_Info_Location),
+                          _labelAndValue(Contact_Info_Email),
+                          _labelAndValue(Contact_Info_Mobile),
                         ],
                       ),
                     ),
@@ -200,12 +200,12 @@ class HomePageState extends State<HomePage> {
                         textDirection: TextDirection.ltr,
                         children: <Widget>[
                           Text(
-                            AboutMeTitle, 
+                            About_Me_Title, 
                             style: TextStyle(
                               fontSize: 30.0
                             ),
                           ),
-                          Text(AboutMeDesc, textAlign: TextAlign.left,)
+                          Text(About_Me_Desc, textAlign: TextAlign.left,)
                         ],
                       ),
                     )
@@ -213,7 +213,7 @@ class HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            _defaultText("kek keme", 30.0),
+            _defaultText(Skills_Title, 30.0),
             Container(
               margin: EdgeInsets.fromLTRB(48, 32, 48, 32),
               child: GridView.count(
@@ -224,10 +224,10 @@ class HomePageState extends State<HomePage> {
                 mainAxisSpacing: 4.0,
                 crossAxisSpacing: 4.0,
                 children: <Widget>[
-                  _gridItems(MyFlutterApp.mobile, "Mobile", "Java, Kotlin, Objective-C, Swift, C#"),
-                  _gridItems(MyFlutterApp.web, "Web", "HTML, CSS, PHP, Javascript"),
-                  _gridItems(MyFlutterApp.cogs, "Automation", "JUnit, Robot, Appium, Python"),
-                  _gridItems(MyFlutterApp.cogs, "Others", "Machine Learning, Image Recognition"),
+                  _gridItems(AppIcons.phone_android, Skills_1),
+                  _gridItems(AppIcons.web, Skills_2),
+                  _gridItems(AppIcons.cogs, Skills_3),
+                  _gridItems(AppIcons.devices_other, Skills_4),
                 ],
               ),
             ),

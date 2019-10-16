@@ -23,18 +23,18 @@
 ///
 import 'package:flutter_web/material.dart';
 
-class MyFlutterApp {
-  MyFlutterApp._();
+class AppIcons {
+  AppIcons._();
 
-  static const _kFontFam = 'MyFlutterApp';
+  static const _kFontFam = 'AppIcons';
 
-  static const IconData mobile = const IconData(0xe800, fontFamily: _kFontFam);
+  static const IconData devices_other = const IconData(0xe800, fontFamily: _kFontFam);
   static const IconData phone_android = const IconData(0xe801, fontFamily: _kFontFam);
   static const IconData web = const IconData(0xe802, fontFamily: _kFontFam);
   static const IconData cogs = const IconData(0xe803, fontFamily: _kFontFam);
   static const IconData twitter = const IconData(0xe804, fontFamily: _kFontFam);
   static const IconData linkedin = const IconData(0xe805, fontFamily: _kFontFam);
-  static const IconData twitter_1 = const IconData(0xe806, fontFamily: _kFontFam);
   static const IconData facebook_1 = const IconData(0xe807, fontFamily: _kFontFam);
-  static const IconData facebook = const IconData(0xf052, fontFamily: _kFontFam);
+  static const IconData github = const IconData(0xe808, fontFamily: _kFontFam);
+  static const IconData bitbucket = const IconData(0xf171, fontFamily: _kFontFam);
 }
