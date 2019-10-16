@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart'; 
-import 'package:resume/constants.dart';
+import 'package:resume/utils/constants.dart';
+import 'package:resume/utils/default-colors.dart';
 
 import 'dart:js' as js;
 
@@ -35,15 +36,13 @@ class HomePageState extends State<HomePage> {
   _defaultText(String text, double textSize) {
     return Text(
       text,
+      textAlign: TextAlign.center,
       style: TextStyle(
         fontSize: textSize,
         color: Colors.black
       ),
     );
   }
-
-  static const _defaultBgButtonState = Color.fromARGB(100, 20, 20, 20);
-  static const _defaultIconButtonState = Color.fromARGB(100, 50, 50, 50);
 
   _decoratedIcon(int id, IconData icon, Color bgcolor, Color iconColor, String urlToOpen) {
     return Container(
@@ -55,12 +54,12 @@ class HomePageState extends State<HomePage> {
         onHover: (hover) {  setState(() { _iconHoverState[id] = hover; }); },
         onTap: () {},
         child: RaisedButton(
-          color: (_iconHoverState[id] ? bgcolor : _defaultBgButtonState),
+          color: (_iconHoverState[id] ? bgcolor : WebColors.cream),
           onPressed: () { js.context.callMethod("open", [urlToOpen]); },
           padding: EdgeInsets.all(0.0),
           child: IconButton(
             onPressed: null,
-            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : _defaultIconButtonState)),
+            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : WebColors.frenchPuse)),
           ),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         ),
@@ -88,40 +87,77 @@ class HomePageState extends State<HomePage> {
     );
   }
 
+  _gridItems(IconData icon, String title, String text) {
+    return GridTile(
+      child: Container(
+        color: Colors.blue,
+        width: 100,
+        height: 100,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+              Icon(icon, size: 50),
+              SizedBox(height: 5,),
+              Text(
+                title, 
+                textAlign: TextAlign.center, 
+                style: TextStyle(fontSize: 30),
+              ),
+              SizedBox(height: 10,),
+              Text(
+                text, 
+                textAlign: TextAlign.center,
+              )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(32),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            _defaultText("HEY HEY", 50.0),
-            _defaultText("kek keme", 30.0),
-            SizedBox(width: 0.0, height: 10.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _decoratedIcon(0, MyFlutterApp.facebook, Colors.white, Colors.blue, "google.com"), // Facebook
-                _decoratedIcon(1, MyFlutterApp.twitter, Colors.white, Colors.lightBlue, "google.com"), //Twitter
-                _decoratedIcon(2, MyFlutterApp.twitter, Colors.red, Colors.white, "google.com"),
-              ],
-            ),
-            SizedBox(width: 0.0, height: 24.0),
             Container(
-              width: 300.0, 
-              height: 300.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFFF),
-                image: DecorationImage(
-                  image: NetworkImage("images/main_logo.jpg"),
-                  fit: BoxFit.cover
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(150.0)),
-                border: Border.all(
-                  color: Colors.red,
-                  width: 20.0
-                )
+              color: WebColors.darkVanilla,
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: 300.0, 
+                    height: 300.0,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF),
+                      image: DecorationImage(
+                        image: NetworkImage("images/main_logo.jpg"),
+                        fit: BoxFit.cover
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(150.0)),
+                      border: Border.all(
+                        color: Colors.red,
+                        width: 20.0
+                      )
+                    ),
+                  ),
+                  SizedBox(width: 0.0, height: 24.0),
+                  _defaultText("CHADWYN GONZALES", 50.0),
+                  _defaultText("MOBILE ENGINEER", 30.0),
+                  SizedBox(width: 0.0, height: 10.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      _decoratedIcon(0, MyFlutterApp.facebook_1, Colors.white, Colors.blue, "google.com"), // Facebook
+                      _decoratedIcon(1, MyFlutterApp.twitter, Colors.white, Colors.lightBlue, "google.com"), //Twitter
+                      _decoratedIcon(2, MyFlutterApp.twitter, Colors.red, Colors.white, "google.com"),
+                    ],
+                  ),
+                ],
               ),
             ),
             SizedBox(width: 0.0, height: 24.0),
@@ -135,7 +171,7 @@ class HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.lime,
                       padding: EdgeInsets.all(32),
-                      width: MediaQuery.of(context).size.width * 0.20,
+                      width: MediaQuery.of(context).size.width,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         textDirection: TextDirection.ltr,
@@ -146,10 +182,10 @@ class HomePageState extends State<HomePage> {
                               fontSize: 30.0,
                             ),
                           ),
+                          _labelAndValue("mmmadadasdas", "mmmasdadada sdsadasd"),
                           _labelAndValue("wowasdsadasd", "wowasdasddadaas"),
-                          _labelAndValue("heyasddsada", "heyasddadss"),
-                          _labelAndValue("mmmadadasdas", "mmmasdadadasdsadasd"),
-                          _labelAndValue("xDasddadada", "Dxaddadasdasdadasdasd"),
+                          _labelAndValue("heyasddsadaa", "heyasddadss"),
+                          _labelAndValue("xDasddadadad", "Dxaddadasdasdadasdasd"),
                         ],
                       ),
                     ),
@@ -178,7 +214,23 @@ class HomePageState extends State<HomePage> {
               ),
             ),
             _defaultText("kek keme", 30.0),
-            // Add gridview here pls :D
+            Container(
+              margin: EdgeInsets.fromLTRB(48, 32, 48, 32),
+              child: GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 2,
+                childAspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
+                padding: EdgeInsets.all(4.0),
+                mainAxisSpacing: 4.0,
+                crossAxisSpacing: 4.0,
+                children: <Widget>[
+                  _gridItems(MyFlutterApp.mobile, "Mobile", "Java, Kotlin, Objective-C, Swift, C#"),
+                  _gridItems(MyFlutterApp.web, "Web", "HTML, CSS, PHP, Javascript"),
+                  _gridItems(MyFlutterApp.cogs, "Automation", "JUnit, Robot, Appium, Python"),
+                  _gridItems(MyFlutterApp.cogs, "Others", "Machine Learning, Image Recognition"),
+                ],
+              ),
+            ),
           ],
         ),
       ) 

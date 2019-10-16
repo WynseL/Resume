@@ -28,6 +28,13 @@ class MyFlutterApp {
 
   static const _kFontFam = 'MyFlutterApp';
 
-  static const IconData twitter = IconData(0xe800, fontFamily: _kFontFam);
-  static const IconData facebook = IconData(0xf052, fontFamily: _kFontFam);
+  static const IconData mobile = const IconData(0xe800, fontFamily: _kFontFam);
+  static const IconData phone_android = const IconData(0xe801, fontFamily: _kFontFam);
+  static const IconData web = const IconData(0xe802, fontFamily: _kFontFam);
+  static const IconData cogs = const IconData(0xe803, fontFamily: _kFontFam);
+  static const IconData twitter = const IconData(0xe804, fontFamily: _kFontFam);
+  static const IconData linkedin = const IconData(0xe805, fontFamily: _kFontFam);
+  static const IconData twitter_1 = const IconData(0xe806, fontFamily: _kFontFam);
+  static const IconData facebook_1 = const IconData(0xe807, fontFamily: _kFontFam);
+  static const IconData facebook = const IconData(0xf052, fontFamily: _kFontFam);
 }
