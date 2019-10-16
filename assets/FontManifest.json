@@ -10,9 +10,9 @@
     {
       "fonts": [
         {
-          "asset": "fonts/MyFlutterApp.ttf"
+          "asset": "fonts/AppIcons.ttf"
         }
       ],
-      "family": "MyFlutterApp"
+      "family": "AppIcons"
     }
 ]
