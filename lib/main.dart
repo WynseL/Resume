@@ -33,6 +33,9 @@ class HomePageState extends State<HomePage> {
 
   List<bool> _iconHoverState = [false, false, false, false];
 
+
+  Size screenSize;
+
   _defaultText(String text, double textSize) {
     return Text(
       text,
@@ -79,9 +82,7 @@ class HomePageState extends State<HomePage> {
               fontStyle: FontStyle.normal    
             )
           ),
-          TextSpan(
-            text: value[1]
-          )
+          TextSpan(text: value[1])
         ]
       ),  
     );
@@ -115,8 +116,16 @@ class HomePageState extends State<HomePage> {
     );
   }
 
+  _dynamicResizeToMobile(double defaultSize, double mobile) {
+    return EdgeInsets.all(defaultSize);
+  }
+
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      screenSize = MediaQuery.of(context).size;
+    });
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -124,8 +133,8 @@ class HomePageState extends State<HomePage> {
           children: <Widget>[
             Container(
               color: WebColors.darkVanilla,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
+              height: screenSize.height,
+              width: screenSize.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -165,6 +174,7 @@ class HomePageState extends State<HomePage> {
             Container(
               margin: EdgeInsets.all(48),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -172,17 +182,12 @@ class HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.lime,
                       padding: EdgeInsets.all(32),
-                      width: MediaQuery.of(context).size.width,
+                      // width: screenSize.width,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         textDirection: TextDirection.ltr,
                         children: <Widget>[
-                          Text(
-                            Contact_Info_Title, 
-                            style: TextStyle(
-                              fontSize: 30.0,
-                            ),
-                          ),
+                          Text(Contact_Info_Title, style: TextStyle(fontSize: 30.0,),),
                           _labelAndValue(Contact_Info_Location),
                           _labelAndValue(Contact_Info_Email),
                           _labelAndValue(Contact_Info_Mobile),
@@ -194,18 +199,13 @@ class HomePageState extends State<HomePage> {
                     child: Container(
                       color: Colors.teal,
                       padding: EdgeInsets.all(32),
-                      width: MediaQuery.of(context).size.width,
+                      width: screenSize.width,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         textDirection: TextDirection.ltr,
                         children: <Widget>[
-                          Text(
-                            About_Me_Title, 
-                            style: TextStyle(
-                              fontSize: 30.0
-                            ),
-                          ),
-                          Text(About_Me_Desc, textAlign: TextAlign.left,)
+                          Text(About_Me_Title, style: TextStyle(fontSize: 30.0),),
+                          Text(About_Me_Desc, textAlign: TextAlign.left,),
                         ],
                       ),
                     )
@@ -219,7 +219,7 @@ class HomePageState extends State<HomePage> {
               child: GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2,
-                childAspectRatio: MediaQuery.of(context).size.width / MediaQuery.of(context).size.height,
+                childAspectRatio: screenSize.width / screenSize.height,
                 padding: EdgeInsets.all(4.0),
                 mainAxisSpacing: 4.0,
                 crossAxisSpacing: 4.0,
