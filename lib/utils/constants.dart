@@ -21,3 +21,8 @@ const Skills_1 = ["Mobile", "Java, Kotlin, Objective-C, Swift, C#"];
 const Skills_2 = ["Web", "HTML, CSS, PHP, Javascript"];
 const Skills_3 = ["Automation", "JUnit, Robot, Appium, Python"];
 const Skills_4 = ["Others", "Machine Learning, Image Recognition"];
+
+
+const DrawerWidth = 300.0;
+
+const DefaultFontSize = 16.0;

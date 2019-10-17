@@ -1,9 +1,6 @@
 import 'package:flutter_web/material.dart';
-import 'package:resume/app_icons.dart'; 
-import 'package:resume/utils/constants.dart';
-import 'package:resume/utils/default-colors.dart';
 
-import 'dart:js' as js;
+import 'package:resume/views/web_page.dart';
 
 void main() => runApp(WebApp());
 
@@ -15,20 +12,12 @@ class WebApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: 'Main Page'),
+      home: WebPage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<StatefulWidget> createState() => HomePageState();
-}
-
+/*
 class HomePageState extends State<HomePage> {
 
   List<bool> _iconHoverState = [false, false, false, false];
@@ -237,3 +226,4 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
+*/
