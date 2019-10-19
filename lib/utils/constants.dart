@@ -16,9 +16,9 @@ const Contact_Info_Mobile = ["Mobile Number", "+19837121309"];
 const About_Me_Title = "About Me";
 const About_Me_Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-const Skills_Title = "hype";
-const Skills_1 = ["Mobile", "Java, Kotlin, Objective-C, Swift, C#"];
-const Skills_2 = ["Web", "HTML, CSS, PHP, Javascript"];
+const Skills_Title = "SKILLS";
+const Skills_1 = ["Mobile", "Java, Kotlin, Objective-C, Swift, C#, Flutter/Dart"];
+const Skills_2 = ["Web", "HTML, CSS, PHP, Javascript, Flutter Web"];
 const Skills_3 = ["Automation", "JUnit, Robot, Appium, Python"];
 const Skills_4 = ["Others", "Machine Learning, Image Recognition"];
 

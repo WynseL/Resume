@@ -1,11 +1,9 @@
-
 import 'package:flutter_web/material.dart';
 import 'package:resume/utils/default-colors.dart';
 import 'package:resume/app_icons.dart'; 
 import 'package:resume/utils/constants.dart';
 import 'package:resume/views/content_frame.dart';
 import 'package:resume/views/drawer/drawer_item.dart';
-
 
 import 'package:resume/views/drawer/drawer_top.dart';
 
@@ -43,9 +41,9 @@ class WebPageState extends State<WebPage> {
               children: <Widget>[
                   // Top Bar
                   DrawerTop(),
-                  DrawerItem(AppIcons.cogs, "kimi", selectedItem == 0, onPressed: () { _setStateItemId(0); },),
-                  DrawerItem(AppIcons.cogs, "no", selectedItem == 1, onPressed: () { _setStateItemId(1); },),
-                  DrawerItem(AppIcons.cogs, "yawa", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
+                  DrawerItem(AppIcons.cogs, "About", selectedItem == 0, onPressed: () { _setStateItemId(0); },),
+                  DrawerItem(AppIcons.cogs, "Background", selectedItem == 1, onPressed: () { _setStateItemId(1); },),
+                  DrawerItem(AppIcons.cogs, "Skills", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
               ],
             ),
           ),
