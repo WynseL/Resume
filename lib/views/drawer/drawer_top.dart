@@ -8,7 +8,7 @@ class DrawerTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: WebColors.cream,
+      color: WebColors.lightPrimary,
       padding: EdgeInsets.all(40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

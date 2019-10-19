@@ -34,7 +34,12 @@ class AppIcons {
   static const IconData cogs = const IconData(0xe803, fontFamily: _kFontFam);
   static const IconData twitter = const IconData(0xe804, fontFamily: _kFontFam);
   static const IconData linkedin = const IconData(0xe805, fontFamily: _kFontFam);
+  static const IconData article = const IconData(0xe806, fontFamily: _kFontFam);
   static const IconData facebook_1 = const IconData(0xe807, fontFamily: _kFontFam);
   static const IconData github = const IconData(0xe808, fontFamily: _kFontFam);
+  static const IconData article_alt = const IconData(0xe809, fontFamily: _kFontFam);
+  static const IconData person = const IconData(0xe80a, fontFamily: _kFontFam);
+  static const IconData star = const IconData(0xe80b, fontFamily: _kFontFam);
+  static const IconData lightbulb_outline = const IconData(0xe80c, fontFamily: _kFontFam);
   static const IconData bitbucket = const IconData(0xf171, fontFamily: _kFontFam);
 }

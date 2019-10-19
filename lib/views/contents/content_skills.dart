@@ -2,6 +2,9 @@ import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/views/text_defaults/text_item_title.dart';
+import 'package:resume/views/text_defaults/text_normal.dart';
+import 'package:resume/views/text_defaults/text_page_title.dart';
 
 class SkillsContent extends StatelessWidget {
   @override
@@ -23,13 +26,13 @@ class SkillsContent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Icon(icon, color: WebColors.frenchPuse, size: 48,),
+                    Icon(icon, color: WebColors.darkPrimary, size: 48,),
                     SizedBox(width: 16,),
-                    Text(value[0], style: TextStyle(fontSize: 26.0),)
+                    ItemTitleText(value[0]),
                   ],
                 ),
                 SizedBox(height: 16,),
-                Text(value[1], style: TextStyle(fontSize: DefaultFontSize),),
+                NormalText(value[1]),
               ],
             ),
           ),
@@ -38,20 +41,15 @@ class SkillsContent extends StatelessWidget {
     }
 
     return Container(
-      color: WebColors.darkVanilla,
+      color: WebColors.light,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width - DrawerWidth,
-      padding: EdgeInsets.all(48),
+      padding: EdgeInsets.all(32),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            Skills_Title,
-            style: TextStyle(
-              fontSize: 42.0 
-            ),
-          ),
+          PageTitleText(Skills_Title),
           SizedBox(height: 16,),
           GridView.count(
             shrinkWrap: true,    
@@ -69,35 +67,6 @@ class SkillsContent extends StatelessWidget {
           ),
         ],
       ),
-      
-      
-
-      // child: Column(
-      //   mainAxisAlignment: MainAxisAlignment.start,
-      //   crossAxisAlignment: CrossAxisAlignment.start,
-      //   children: <Widget>[
-      //     Text(
-      //       Skills_Title,
-      //       style: TextStyle(
-      //         fontSize: 42.0 
-      //       ),
-      //     ),
-      //     SizedBox(height: 16,),
-      //     SingleChildScrollView(
-      //       scrollDirection: Axis.horizontal,
-
-      //       child: Row(
-      //         children: <Widget>[
-      //           _cardItems(AppIcons.cogs, "cowww"),
-      //           SizedBox(width: 36,),
-      //           _cardItems(AppIcons.cogs, "cowww"),
-      //           SizedBox(width: 36,),
-      //           _cardItems(AppIcons.cogs, "cowww"),
-      //         ],
-      //       ),
-      //     )
-      //   ],
-      // ),
     );
   }
 }

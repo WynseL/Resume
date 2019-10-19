@@ -3,8 +3,12 @@ import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/views/text_defaults/text_big.dart';
+import 'package:resume/views/text_defaults/text_normal.dart';
 
 import 'dart:js' as js;
+
+import 'package:resume/views/text_defaults/text_small.dart';
 
 
 class HomeContent extends StatefulWidget {
@@ -14,7 +18,7 @@ class HomeContent extends StatefulWidget {
 
 class HomeContentState extends State<HomeContent> {
 
-  List<bool> _iconHoverState = [false, false, false, false];
+  List<bool> _iconHoverState = [false, false, false, false, false];
 
   _decoratedIcon(int id, IconData icon, Color bgcolor, Color iconColor, String urlToOpen) {
     return Container(
@@ -26,12 +30,12 @@ class HomeContentState extends State<HomeContent> {
         onHover: (hover) {  setState(() { _iconHoverState[id] = hover; }); },
         onTap: () {},
         child: RaisedButton(
-          color: (_iconHoverState[id] ? bgcolor : WebColors.cream),
+          color: (_iconHoverState[id] ? bgcolor : WebColors.lightPrimary),
           onPressed: () { js.context.callMethod("open", [urlToOpen]); },
           padding: EdgeInsets.all(0.0),
           child: IconButton(
             onPressed: null,
-            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : WebColors.frenchPuse)),
+            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : WebColors.darkPrimary)),
           ),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         ),
@@ -42,7 +46,7 @@ class HomeContentState extends State<HomeContent> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: WebColors.darkVanilla,
+      color: WebColors.light,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width - DrawerWidth,
       padding: EdgeInsets.all(48),
@@ -67,29 +71,17 @@ class HomeContentState extends State<HomeContent> {
             ),
           ),
           SizedBox(width: 0.0, height: 32.0),
-          Text(
-            Header_Title,
-            textAlign: TextAlign.start,
-            style: TextStyle(
-              fontSize: 50.0,
-              color: Colors.black
-            ),
-          ),
-          Text(
-            About_Me_Desc,
-            style: TextStyle(
-              fontSize: DefaultFontSize,
-              color: Colors.black
-            ),
-          ),
-          SizedBox(width: 0.0, height: 24.0),
+          BigText(Header_Title),
+          NormalText(About_Me_Desc),
+          SizedBox(width: 0.0, height: 16.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              _decoratedIcon(0, AppIcons.facebook_1, Colors.white, Colors.blue, Header_Link_0), // Facebook
-              _decoratedIcon(1, AppIcons.twitter, Colors.white, Colors.lightBlue, Header_Link_0), //Twitter
-              _decoratedIcon(2, AppIcons.github, Colors.white, Colors.black, Header_Link_0), // Github
-              _decoratedIcon(3, AppIcons.bitbucket, Colors.white, Colors.blue, Header_Link_0), // Bitbucket
+              _decoratedIcon(0, AppIcons.facebook_1, Colors.white, Colors.blue, Header_Link_1), // Facebook
+              _decoratedIcon(1, AppIcons.twitter, Colors.white, Colors.lightBlue, Header_Link_2), //Twitter
+              _decoratedIcon(2, AppIcons.github, Colors.white, Colors.black, Header_Link_3), // Github
+              _decoratedIcon(3, AppIcons.bitbucket, Colors.white, Colors.blue, Header_Link_4), // Bitbucket
+              _decoratedIcon(4, AppIcons.linkedin, Colors.blue, Colors.white, Header_Link_5), // LinkedIn
             ],
           ),
         ],

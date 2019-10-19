@@ -36,14 +36,14 @@ class WebPageState extends State<WebPage> {
           Container(
             width: DrawerWidth,
             height: MediaQuery.of(context).size.height,
-            color: WebColors.darkVanilla,
+            color: WebColors.lightPrimary,
             child: ListView(
               children: <Widget>[
                   // Top Bar
                   DrawerTop(),
-                  DrawerItem(AppIcons.cogs, "About", selectedItem == 0, onPressed: () { _setStateItemId(0); },),
-                  DrawerItem(AppIcons.cogs, "Background", selectedItem == 1, onPressed: () { _setStateItemId(1); },),
-                  DrawerItem(AppIcons.cogs, "Skills", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
+                  DrawerItem(AppIcons.person, "About", selectedItem == 0, onPressed: () { _setStateItemId(0); },),
+                  DrawerItem(AppIcons.star, "Milestones", selectedItem == 1, onPressed: () { _setStateItemId(1); },),
+                  DrawerItem(AppIcons.lightbulb_outline, "Skills", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
               ],
             ),
           ),

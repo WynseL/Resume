@@ -2,6 +2,9 @@ import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/views/contents/milestones/milestone_article.dart';
+import 'package:resume/views/contents/milestones/milestone_news.dart';
+import 'package:resume/views/text_defaults/text_page_title.dart';
 
 class BackgroundContent extends StatefulWidget {
 @override
@@ -10,45 +13,37 @@ class BackgroundContent extends StatefulWidget {
 
 class BackgroundContentState extends State<BackgroundContent> {
 
-  _timelineItem() {
-
-    double cardHeight = 100.0;
-    double fixedIconSize = 60.0;
+  _timelineStart() {
+    double cardHeight = 50.0;
+    double fixedIconSize = 40.0;
 
     double fixedIconSizeBorder = fixedIconSize - 10;
-    double fixedIconSizeCenter = (cardHeight / 2) + 10;
+    double fixedIconSizeTop = (cardHeight / 2) + 10;
 
     return Stack(
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(left: 48),
-          child: Card(
+          child: Container(
             margin: EdgeInsets.all(32),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: cardHeight,
-            ),
+            child: SizedBox(width: MediaQuery.of(context).size.width, height: cardHeight,),
           ),
         ),
         Positioned(
-          top: 0.0,
+          top: fixedIconSizeTop,
           left: 35.0,
           bottom: 0.0,
-          child: Container(
-            height: 50.0,
-            width: 1.0,
-            color: WebColors.frenchPuse,
-          ),
+          child: Container(height: 50.0, width: 1.0, color: WebColors.darkPrimary,),
         ),
         Positioned(
-          top: fixedIconSizeCenter,
-          left: 10.0,
+          top: fixedIconSizeTop,
+          left: 20.0,
           child: Container(
             height: fixedIconSizeBorder,
             width: fixedIconSizeBorder,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: WebColors.darkVanilla
+              color: WebColors.light
             ),
             child: Container(
               margin: EdgeInsets.all(5.0),
@@ -56,7 +51,54 @@ class BackgroundContentState extends State<BackgroundContent> {
               width: fixedIconSize,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: WebColors.frenchPuse
+                color: WebColors.darkPrimary
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+  _timelineEnd() {
+    double cardHeight = 50.0;
+    double fixedIconSize = 40.0;
+
+    double fixedIconSizeBorder = fixedIconSize - 10;
+    double fixedIconSizeTop = (cardHeight / 2) + 10;
+
+    return Stack(
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(left: 48),
+          child: Container(
+            margin: EdgeInsets.all(32),
+            child: SizedBox(width: MediaQuery.of(context).size.width, height: cardHeight,),
+          ),
+        ),
+        Positioned(
+          top: 0.0,
+          left: 35.0,
+          bottom: fixedIconSizeTop,
+          child: Container(height: 50.0, width: 1.0, color: WebColors.darkPrimary,),
+        ),
+        Positioned(
+          bottom: fixedIconSizeTop,
+          left: 20.0,
+          child: Container(
+            height: fixedIconSizeBorder,
+            width: fixedIconSizeBorder,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: WebColors.light
+            ),
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              height: fixedIconSize,
+              width: fixedIconSize,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: WebColors.darkPrimary
               ),
             ),
           ),
@@ -67,11 +109,8 @@ class BackgroundContentState extends State<BackgroundContent> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    
-    
-    Container(
-      color: WebColors.darkVanilla,
+    return Container(
+      color: WebColors.light,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width - DrawerWidth,
       padding: EdgeInsets.all(32),
@@ -79,23 +118,17 @@ class BackgroundContentState extends State<BackgroundContent> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // Text(
-          //   Background_Title,
-          //   style: TextStyle(
-          //     fontSize: 42.0 
-          //   ),
-          // ),
+          PageTitleText(Milestone_Title),
           SizedBox(height: 16,),
-          Container(
+          Expanded(
+            flex: 1,
             child: ListView(
               children: <Widget>[
-                _timelineItem(),
-                _timelineItem(),
-                _timelineItem(),
-                _timelineItem(),
-                _timelineItem(),
-                _timelineItem(),
-                _timelineItem(),
+                _timelineStart(),
+                MilestoneArticle(mClinicaGoes1stFlutterPHEvent),
+                MilestoneNews(fdaToUseEDSS),
+                MilestoneNews(digitalLogbookEDSS),
+                _timelineEnd(),
               ],
             ),
           ),
