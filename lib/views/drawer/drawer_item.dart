@@ -2,6 +2,7 @@
 import 'package:flutter_web/cupertino.dart';
 import 'package:flutter_web/material.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/utils/dipro-font.dart';
 import 'package:resume/views/text_defaults/text_normal.dart';
 
 class DrawerItem extends StatelessWidget {
@@ -24,9 +25,17 @@ class DrawerItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Icon(icon, color: WebColors.dark, size: 35.0,),
-            SizedBox(width: 24,),
-            NormalText(text,),
+            Icon(
+              icon, 
+              color: (isSelected ? WebColors.dark : WebColors.light), 
+              size: 24.0,
+            ),
+            SizedBox(width: 16,),
+            NormalText(
+              text,
+              color: (isSelected ? WebColors.dark : WebColors.light), 
+              // fontFamily: DINPro.medium,),
+              fontFamily: (isSelected ? DINPro.medium : DINPro.light),),
           ],
         ),
       );

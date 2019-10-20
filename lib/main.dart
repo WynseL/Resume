@@ -1,4 +1,5 @@
 import 'package:flutter_web/material.dart';
+import 'package:resume/utils/default-colors.dart';
 
 import 'package:resume/views/web_page.dart';
 
@@ -10,7 +11,8 @@ class WebApp extends StatelessWidget {
     return MaterialApp(
       title: 'CHAD G.',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: WebColors.primary,
+        // primarySwatch: Colors.blue,
       ),
       home: WebPage(),
     );

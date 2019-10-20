@@ -3,12 +3,13 @@
 import 'package:flutter_web/material.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/utils/dipro-font.dart';
+import 'package:resume/views/text_defaults/text_normal.dart';
 
 class DrawerTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: WebColors.lightPrimary,
       padding: EdgeInsets.all(40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -18,7 +19,7 @@ class DrawerTop extends StatelessWidget {
             width: 100.0, 
             height: 100.0,
             decoration: BoxDecoration(
-              color: const Color(0xFFF),
+              color: WebColors.darkPrimary,
               boxShadow: [
                 BoxShadow(color: Color.fromRGBO(2, 4, 16, 1)),
               ],
@@ -36,10 +37,18 @@ class DrawerTop extends StatelessWidget {
           SizedBox(width: 0.0, height: 8.0),
           Text(Header_Title, 
             style: TextStyle(
-              fontSize: 24
+              fontSize: 24,
+              fontFamily: DINPro.medium,
+              color: WebColors.light
             ),
           ),
-          Text(Header_SubTitle),
+          NormalText(Header_SubTitle, color: WebColors.light, fontFamily: DINPro.light,),
+        ],
+      ),
+      decoration: BoxDecoration(
+        color: WebColors.primary,
+        boxShadow: [
+          BoxShadow(color: WebColors.light),
         ],
       ),
     );

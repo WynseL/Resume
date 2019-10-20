@@ -8,8 +8,6 @@ import 'package:resume/views/text_defaults/text_normal.dart';
 
 import 'dart:js' as js;
 
-import 'package:resume/views/text_defaults/text_small.dart';
-
 
 class HomeContent extends StatefulWidget {
   @override
@@ -30,12 +28,13 @@ class HomeContentState extends State<HomeContent> {
         onHover: (hover) {  setState(() { _iconHoverState[id] = hover; }); },
         onTap: () {},
         child: RaisedButton(
+          elevation: 0,
           color: (_iconHoverState[id] ? bgcolor : WebColors.lightPrimary),
           onPressed: () { js.context.callMethod("open", [urlToOpen]); },
           padding: EdgeInsets.all(0.0),
           child: IconButton(
             onPressed: null,
-            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : WebColors.darkPrimary)),
+            icon: Icon(icon, color: (_iconHoverState[id] ? iconColor : WebColors.light)),
           ),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
         ),
@@ -60,7 +59,7 @@ class HomeContentState extends State<HomeContent> {
             decoration: BoxDecoration(
               color: const Color(0xFFF),
               image: DecorationImage(
-                image: NetworkImage("images/main_logo.jpg"),
+                image: NetworkImage("images/itsamechad.jpg"),
                 fit: BoxFit.cover
               ),
               borderRadius: BorderRadius.all(Radius.circular(150.0)),

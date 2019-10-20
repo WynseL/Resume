@@ -26,7 +26,15 @@ class SkillsContent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Icon(icon, color: WebColors.darkPrimary, size: 48,),
+                    Container(
+                      height: 60.0,
+                      width: 60.0,
+                      decoration: BoxDecoration(
+                        color: WebColors.light,
+                        shape: BoxShape.circle
+                      ),
+                      child: Icon(icon, color: WebColors.primary, size: 32,),
+                    ),
                     SizedBox(width: 16,),
                     ItemTitleText(value[0]),
                   ],
