@@ -34,7 +34,6 @@ class DrawerItem extends StatelessWidget {
             NormalText(
               text,
               color: (isSelected ? WebColors.dark : WebColors.light), 
-              // fontFamily: DINPro.medium,),
               fontFamily: (isSelected ? DINPro.medium : DINPro.light),),
           ],
         ),

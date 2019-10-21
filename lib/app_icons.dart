@@ -41,5 +41,8 @@ class AppIcons {
   static const IconData person = const IconData(0xe80a, fontFamily: _kFontFam);
   static const IconData star = const IconData(0xe80b, fontFamily: _kFontFam);
   static const IconData lightbulb_outline = const IconData(0xe80c, fontFamily: _kFontFam);
+  static const IconData award = const IconData(0xe80d, fontFamily: _kFontFam);
+  static const IconData pin = const IconData(0xe80e, fontFamily: _kFontFam);
+  static const IconData link = const IconData(0xe80f, fontFamily: _kFontFam);
   static const IconData bitbucket = const IconData(0xf171, fontFamily: _kFontFam);
 }

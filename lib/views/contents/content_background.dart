@@ -1,11 +1,13 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web/widgets.dart';
+import 'package:resume/app_icons.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
 import 'package:resume/views/contents/milestones/milestone_article.dart';
 import 'package:resume/views/contents/milestones/milestone_news.dart';
 import 'package:resume/views/responsive_layout.dart';
 import 'package:resume/views/text_defaults/text_page_title.dart';
+import 'package:tuple/tuple.dart';
 
 class BackgroundContent extends StatefulWidget {
 @override
@@ -125,9 +127,24 @@ class BackgroundContentState extends State<BackgroundContent> {
             child: ListView(
               children: <Widget>[
                 _timelineStart(),
-                MilestoneArticle(mClinicaGoes1stFlutterPHEvent),
-                MilestoneNews(fdaToUseEDSS),
-                MilestoneNews(digitalLogbookEDSS),
+                MilestoneArticle(
+                  mClinicaGoes1stFlutterPHEvent, 
+                  buttons: [ 
+                    Tuple2(AppIcons.link, "https://medium.com/mclinica-tech/mclinica-goes-to-flutter-philippines-1st-ever-study-jam-db987b868adb"),
+                  ],
+                ),
+                MilestoneNews(
+                  fdaToUseEDSS,
+                  buttons: [ 
+                    Tuple2(AppIcons.link, "https://www.rappler.com/science-nature/life-health/215910-pharmacy-logbooks-digital-2020-mclinica-food-and-drug-administration"),
+                  ],
+                ),
+                MilestoneNews(
+                  digitalLogbookEDSS,
+                  buttons: [ 
+                    Tuple2(AppIcons.link, "https://www.bworldonline.com/fda-to-use-mclinica-app-to-monitor-prescriptions/"),
+                  ],
+                ),
                 _timelineEnd(),
               ],
             ),

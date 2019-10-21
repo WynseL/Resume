@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/utils/dipro-font.dart';
 import 'package:resume/views/content_frame.dart';
 import 'package:resume/views/drawer/drawer_item.dart';
 import 'package:resume/views/drawer/drawer_top.dart';
@@ -26,7 +27,7 @@ class MobilePageState extends State<MobilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: NormalText(""),
+        title: NormalText("MENU", fontFamily: DINPro.bold, color: WebColors.light,),
       ),
       backgroundColor: Colors.white,
       drawer: Drawer(
@@ -38,8 +39,8 @@ class MobilePageState extends State<MobilePage> {
                 DrawerTop(),
                 DrawerItem(AppIcons.person, "About", selectedItem == 0, onPressed: () { _setStateItemId(0); },),
                 DrawerItem(AppIcons.lightbulb_outline, "Skills", selectedItem == 1, onPressed: () { _setStateItemId(1); },),
-                DrawerItem(AppIcons.star, "Awards", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
-                DrawerItem(AppIcons.star, "News & Articles", selectedItem == 3, onPressed: () { _setStateItemId(3); },),
+                DrawerItem(AppIcons.award, "Awards", selectedItem == 2, onPressed: () { _setStateItemId(2); },),
+                DrawerItem(AppIcons.pin, "News & Articles", selectedItem == 3, onPressed: () { _setStateItemId(3); },),
             ],
           ),
         ),

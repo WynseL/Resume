@@ -24,7 +24,6 @@ class ButtonList extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: value.map((hash) {
         return Container(
-          margin: EdgeInsets.fromLTRB(8, 4, 8, 4),
           width: 40.0, 
           height: 40.0,
           child: InkWell(

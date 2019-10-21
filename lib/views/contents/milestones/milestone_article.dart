@@ -1,14 +1,16 @@
 import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart';
+import 'package:resume/views/buttons/button_list.dart';
 import 'package:resume/views/contents/milestones/milestone_base.dart';
 import 'package:resume/views/text_defaults/text_item_title.dart';
 import 'package:resume/views/text_defaults/text_normal.dart';
 
 class MilestoneArticle extends StatelessWidget {
 
-  MilestoneArticle(this.value);
+  MilestoneArticle(this.value, {this.buttons});
 
   List value;
+  List buttons;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,8 @@ class MilestoneArticle extends StatelessWidget {
           NormalText(value[1], fontStyle: FontStyle.italic,),
           SizedBox(height: 16,),
           NormalText(value[2]),
+          SizedBox(height: 8,),
+          ButtonList(buttons),
         ],
       ),
     );
