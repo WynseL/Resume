@@ -3,6 +3,7 @@ import 'package:resume/app_icons.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
 import 'package:resume/views/buttons/button_list.dart';
+import 'package:resume/views/responsive_layout.dart';
 import 'package:resume/views/text_defaults/text_item_title.dart';
 import 'package:resume/views/text_defaults/text_normal.dart';
 import 'package:resume/views/text_defaults/text_page_title.dart';
@@ -37,7 +38,6 @@ class AwardsContent extends StatelessWidget {
     return Container(
       color: WebColors.light,
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width - DrawerWidth,
       padding: EdgeInsets.all(32),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

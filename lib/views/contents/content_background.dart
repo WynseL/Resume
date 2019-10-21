@@ -4,6 +4,7 @@ import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
 import 'package:resume/views/contents/milestones/milestone_article.dart';
 import 'package:resume/views/contents/milestones/milestone_news.dart';
+import 'package:resume/views/responsive_layout.dart';
 import 'package:resume/views/text_defaults/text_page_title.dart';
 
 class BackgroundContent extends StatefulWidget {
@@ -112,7 +113,6 @@ class BackgroundContentState extends State<BackgroundContent> {
     return Container(
       color: WebColors.light,
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width - DrawerWidth,
       padding: EdgeInsets.all(32),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,

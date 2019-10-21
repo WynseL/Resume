@@ -2,6 +2,7 @@ import 'package:flutter_web/material.dart';
 import 'package:resume/app_icons.dart';
 import 'package:resume/utils/constants.dart';
 import 'package:resume/utils/default-colors.dart';
+import 'package:resume/views/responsive_layout.dart';
 import 'package:resume/views/text_defaults/text_item_title.dart';
 import 'package:resume/views/text_defaults/text_normal.dart';
 import 'package:resume/views/text_defaults/text_page_title.dart';
@@ -51,7 +52,6 @@ class SkillsContent extends StatelessWidget {
     return Container(
       color: WebColors.light,
       height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width - DrawerWidth,
       padding: EdgeInsets.all(32),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -59,20 +59,23 @@ class SkillsContent extends StatelessWidget {
         children: <Widget>[
           PageTitleText(Skills_Title),
           SizedBox(height: 16,),
-          GridView.count(
-            shrinkWrap: true,    
-            padding: EdgeInsets.all(4.0),          
-            mainAxisSpacing: 4.0,
-            childAspectRatio: 2,
-            crossAxisSpacing: 32.0,
-            crossAxisCount: 3,
-            children: <Widget>[
-              _cardItems(AppIcons.phone_android, Skills_1),
-              _cardItems(AppIcons.web, Skills_2),
-              _cardItems(AppIcons.cogs, Skills_3),
-              _cardItems(AppIcons.devices_other, Skills_4),
-            ],
-          ),
+          Expanded(
+            flex: 1,
+            child: GridView.count(
+              shrinkWrap: false,    
+              padding: EdgeInsets.all(4.0),          
+              mainAxisSpacing: 4.0,
+              childAspectRatio: 2,
+              crossAxisSpacing: 32.0,
+              crossAxisCount: (ResponsiveLayout.isLargeScreen(context) ? 3 : 1),
+              children: <Widget>[
+                _cardItems(AppIcons.phone_android, Skills_1),
+                _cardItems(AppIcons.web, Skills_2),
+                _cardItems(AppIcons.cogs, Skills_3),
+                _cardItems(AppIcons.devices_other, Skills_4),
+              ],
+            ),
+          )
         ],
       ),
     );

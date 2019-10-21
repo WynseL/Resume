@@ -38,6 +38,6 @@ const fdaToUseEDSS = ["FDA to use mClinica app to monitor prescriptions", "Octob
 
 /* AWARDS */
 const Awards_Title = "AWARDS";
-const angelhackJuicebox = ["AngelHack Manila winner has a futuristic IoT JuiceBox for a healthy you", "August 13, 2015", "An e27 article about my team Divided By Zero's success for developing an automated, IoT juicer with a mobile app.\n\nRead the full story here."];
+const angelhackJuicebox = ["AngelHack Manila winner has a futuristic IoT JuiceBox for a healthy you", "August 13, 2015", "An e27 article about my team Divided By Zero's success for developing an automated, IoT juicer with a mobile app. Read the full story here."];
 //https://e27.co/angelhack-manila-winner-has-a-futuristic-iot-juicebox-for-a-healthy-you-20150813/
 /* AWARDS */
