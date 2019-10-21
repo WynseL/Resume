@@ -14,5 +14,37 @@
         }
       ],
       "family": "AppIcons"
+    },
+    {
+      "fonts": [
+        {
+          "asset": "fonts/dinpro/DINPro-Black.ttf"
+        }
+      ],
+      "family": "DINPro Black"
+    },
+    {
+      "fonts": [
+        {
+          "asset": "fonts/dinpro/DINPro-Bold.ttf"
+        }
+      ],
+      "family": "DINPro Bold"
+    },
+    {
+      "fonts": [
+        {
+          "asset": "fonts/dinpro/DINPro-Light.ttf"
+        }
+      ],
+      "family": "DINPro Light"
+    },
+    {
+      "fonts": [
+        {
+          "asset": "fonts/dinpro/DINPro-Medium.ttf"
+        }
+      ],
+      "family": "DINPro Medium"
     }
 ]
